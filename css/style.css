@@ -1,0 +1,24 @@
+.gombocska {
+    color: rgb(246, 0, 0);
+    background-color: rgb(255, 255, 255);
+}  
+
+@keyframes villogjalmore {
+    0% { border-color: rgb(2, 128, 2); }
+    25% { border-color: rgb(246, 11, 11); }
+    50% { border-color: rgb(42, 193, 67); }
+    75% { border-color: rgb(89, 108, 246); }
+    100% { border-color: rgb(10, 255, 235); }
+    
+}
+
+table {
+    border: 1px solid rgb(2, 128, 2);
+    border-collapse: collapse;
+    animation: villogjalmore 1s infinite; 
+}
+
+body {
+
+    background-color: rgb(209, 207, 207);
+}
