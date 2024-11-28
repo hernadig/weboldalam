@@ -22,3 +22,9 @@ body {
 
     background-color: rgb(209, 207, 207);
 }
+
+.kepecske {
+    border-radius: 225px 225px 225px 225px;
+   -moz-border-radius: 225px 225px 225px 225px;
+   -webkit-border-radius: 225px 225px 225px 225px;
+}
