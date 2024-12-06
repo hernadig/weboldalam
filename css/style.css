@@ -1,28 +1,335 @@
-.gombocska {
-    color: rgb(246, 0, 0);
-    background-color: rgb(255, 255, 255);
-}  
-
-@keyframes villogjalmore {
-    0% { border-color: rgb(2, 128, 2); }
-    25% { border-color: rgb(246, 11, 11); }
-    50% { border-color: rgb(42, 193, 67); }
-    75% { border-color: rgb(89, 108, 246); }
-    100% { border-color: rgb(10, 255, 235); }
-    
+/* Alap stílusok */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-table {
-    border: 1px solid rgb(2, 128, 2);
-    border-collapse: collapse;
-    animation: villogjalmore 1s infinite; 
-}
-
+/* Háttérszín és betűstílus az egész oldalra */
 body {
-
-    background-color: rgb(209, 207, 207);
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
 }
 
-.kepecske {
-    border: 5px solid #555;
-  }
+/* Navigációs sáv stílusai */
+nav {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav button {
+    background-color: #444;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #555;
+}
+
+/* Címsor stílus */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Vonal a cím alatt */
+hr {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Tábla stílusai */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+/* Órák cellái */
+td span {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Színek az egyes órákhoz */
+span {
+    transition: background-color 0.3s;
+}
+
+span:hover {
+    background-color: #ddd;
+}
+
+span[style*="background-color: grey;"] {
+    background-color: #ccc;
+}
+
+span[style*="background-color: rgb(234, 192, 192);"] {
+    background-color: #FAD4D4;
+}
+
+span[style*="background-color: rgb(71, 119, 191);"] {
+    background-color: #476FBF;
+    color: white;
+}
+
+span[style*="background-color: rgb(241, 75, 75);"] {
+    background-color: #F14B4B;
+    color: white;
+}
+
+span[style*="background-color: rgb(205, 226, 66);"] {
+    background-color: #CDE242;
+}
+
+span[style*="background-color: rgb(222, 97, 29);"] {
+    background-color: #DE611D;
+    color: white;
+}
+
+span[style*="background-color: rgb(83, 58, 222);"] {
+    background-color: #533ADA;
+    color: white;
+}
+
+span[style*="background-color: rgb(255, 30, 30);"] {
+    background-color: #FF1E1E;
+    color: white;
+}
+
+span[style*="background-color: rgb(59, 233, 82);"] {
+    background-color: #3BE352;
+    color: white;
+}
+
+span[style*="background-color: rgb(130, 77, 220);"] {
+    background-color: #824DDC;
+    color: white;
+}
+
+span[style*="background-color: rgb(217, 36, 121);"] {
+    background-color: #D92479;
+    color: white;
+}
+
+/* Alternáló sorok színezése */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Ha az óra üres, szürkés háttér */
+td:empty {
+    background-color: #f9f9f9;
+}
+
+/* Media query a kisebb képernyők számára */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Alap stílusok */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Háttér és betűstílus az oldalnak */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Navigációs sáv stílusai */
+nav {
+    background-color: #f4a300;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav button {
+    background-color: #f4a300;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav button a {
+    color: brown;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #c27c00;
+}
+
+nav button a:hover {
+    color: #fff;
+}
+
+/* Fejléc stílusai */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #4A90E2;
+}
+
+h2 {
+    font-size: 30px;
+    color: #50E3C2;
+}
+
+h3 {
+    font-size: 24px;
+    color: #F5A623;
+}
+
+h4 {
+    font-size: 20px;
+    color: #E94E77;
+}
+
+h5 {
+    font-size: 18px;
+    color: #9013FE;
+}
+
+h6 {
+    font-size: 16px;
+    color: #B8E986;
+}
+
+/* Leírás stílus */
+p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Kép stílus */
+img {
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+    border: 5px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Vonal a címok között */
+hr {
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Reszponzív dizájn */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    h6 {
+        font-size: 14px;
+    }
+
+    img {
+        width: 80%;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav button {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+}
